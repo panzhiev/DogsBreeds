@@ -6,8 +6,6 @@ import com.panzhiev.data.apiservice.DogsBreedsApiService
 import com.panzhiev.dogsbreeds.BuildConfig
 import dagger.Module
 import dagger.Provides
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
@@ -19,9 +17,8 @@ import javax.inject.Named
 private const val BASE_URL = "base_url"
 private const val TIME_OUT = 30L
 
-@ExperimentalCoroutinesApi
 @Module
-abstract class NetworkModule {
+class NetworkModule {
 
     @Provides
     @Named(BASE_URL)

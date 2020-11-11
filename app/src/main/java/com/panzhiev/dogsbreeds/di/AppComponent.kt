@@ -3,6 +3,9 @@ package com.panzhiev.dogsbreeds.di
 import android.app.Application
 import com.panzhiev.dogsbreeds.DogsBreedsApplication
 import com.panzhiev.dogsbreeds.di.module.AppModule
+import com.panzhiev.dogsbreeds.di.module.GsonModule
+import com.panzhiev.dogsbreeds.di.module.NetworkModule
+import com.panzhiev.dogsbreeds.di.module.RepositoryModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -16,14 +19,11 @@ import kotlin.time.ExperimentalTime
     modules = [
         AndroidInjectionModule::class,
         AppModule::class,
+        NetworkModule::class,
+        GsonModule::class,
+        RepositoryModule::class,
 //        ActivitiesModule::class,
-//        RetrofitModule::class,
 //        DbModule::class,
-//        RepositoriesModule::class,
-//        BuildTypeModule::class,
-//        OkHttpModule::class,
-//        ConfigModule::class,
-//        GsonModule::class,
 //        FlavorModule::class,
 //        ServiceModule::class
     ]
