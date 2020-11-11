@@ -8,13 +8,7 @@ import kotlin.time.ExperimentalTime
 @ExperimentalTime
 class DogsBreedsApplication : DaggerApplication() {
 
-    override fun applicationInjector() = this.appComponent
+    override fun applicationInjector() = appComponent
 
-    lateinit var appComponent: AppComponent
-        private set
-
-    override fun onCreate() {
-        super.onCreate()
-        appComponent = DaggerAppComponent.factory().create(this)
-    }
+    private val appComponent: AppComponent by lazy { DaggerAppComponent.factory().create(this) }
 }

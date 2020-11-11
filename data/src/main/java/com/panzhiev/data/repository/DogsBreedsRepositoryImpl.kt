@@ -17,6 +17,6 @@ class DogsBreedsRepositoryImpl @Inject constructor(
             Result.Success(breedsMapper.toDomain(apiService.getAllBreeds().message))
         } catch (e: Exception) {
             e.printStackTrace()
-            Result.Error
+            Result.Error(e.message)
         }
 }

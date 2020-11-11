@@ -14,9 +14,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
 
         // build config variables
         buildConfigField 'String', 'BASE_URL', "\"https://dog.ceo/api/\""
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 
     buildTypes {
