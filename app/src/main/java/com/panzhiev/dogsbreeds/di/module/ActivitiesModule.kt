@@ -1,7 +1,7 @@
 package com.panzhiev.dogsbreeds.di.module
 
 import com.panzhiev.ui.MainActivity
-import com.panzhiev.ui.allbreeds.ui.DogsBreedsFragment
+import com.panzhiev.ui.allbreeds.ui.DogBreedsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -13,5 +13,5 @@ interface ActivitiesModule {
     fun mainActivity(): MainActivity
 
     @ContributesAndroidInjector
-    fun allBreedsFragment(): DogsBreedsFragment
+    fun allBreedsFragment(): DogBreedsFragment
 }

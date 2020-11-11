@@ -4,16 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.panzhiev.ui.allbreeds.viewmodel.DogsBreedsViewModel
 import dagger.android.support.DaggerFragment
-import kotlin.reflect.KClass
 
 abstract class BaseFragment<B : ViewDataBinding> : DaggerFragment() {
 
@@ -44,4 +41,7 @@ abstract class BaseFragment<B : ViewDataBinding> : DaggerFragment() {
     abstract fun setupBinding(binding: B)
 
     abstract fun setupViews()
+
+    protected fun showToast(message: CharSequence) =
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
 }

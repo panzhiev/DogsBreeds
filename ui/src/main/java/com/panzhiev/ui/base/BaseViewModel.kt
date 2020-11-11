@@ -7,10 +7,12 @@ import com.panzhiev.ui.base.extensions.event
 
 abstract class BaseViewModel<N : Navigation> : ViewModel() {
 
-    protected val navigationEvent = event<N>()
+    private val navigationEvent = event<N>()
 
     fun observeNavigation(owner: LifecycleOwner, observer: (N) -> Unit) =
         navigationEvent.observe(owner, observer)
+
+    protected fun navigateTo(navigation: N) = navigationEvent.postValue(navigation)
 
     protected inline fun <T> handleResult(
         result: Result<T>,

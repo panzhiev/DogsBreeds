@@ -1,16 +1,16 @@
 package com.panzhiev.data.repository
 
-import com.panzhiev.data.apiservice.DogsBreedsApiService
-import com.panzhiev.data.mapper.DogsBreedsMapper
+import com.panzhiev.data.apiservice.DogBreedsApiService
+import com.panzhiev.data.mapper.DogBreedsMapper
 import com.panzhiev.domain.model.DogBreed
 import com.panzhiev.domain.model.Result
-import com.panzhiev.domain.repository.DogsBreedsRepository
+import com.panzhiev.domain.repository.DogBreedsRepository
 import javax.inject.Inject
 
-class DogsBreedsRepositoryImpl @Inject constructor(
-    private val apiService: DogsBreedsApiService,
-    private val breedsMapper: DogsBreedsMapper
-) : DogsBreedsRepository {
+class DogBreedsRepositoryImpl @Inject constructor(
+    private val apiService: DogBreedsApiService,
+    private val breedsMapper: DogBreedsMapper
+) : DogBreedsRepository {
 
     override suspend fun getAllDogsBreeds(): Result<List<DogBreed>> =
         try {

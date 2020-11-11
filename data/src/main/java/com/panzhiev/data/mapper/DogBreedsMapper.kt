@@ -4,7 +4,7 @@ import com.panzhiev.domain.model.DogBreed
 import java.util.*
 import javax.inject.Inject
 
-class DogsBreedsMapper @Inject constructor() {
+class DogBreedsMapper @Inject constructor() {
 
     fun toDomain(breedsMap: Map<String, List<String>>): List<DogBreed> {
 

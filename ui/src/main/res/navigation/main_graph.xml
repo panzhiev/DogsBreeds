@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/dogsBreedsFragment"
-        android:name="com.panzhiev.ui.allbreeds.ui.DogsBreedsFragment"
+        android:name="com.panzhiev.ui.allbreeds.ui.DogBreedsFragment"
         android:label="DogsBreedsFragment"
-        tools:layout="@layout/fragment_dogs_breeds" />
+        tools:layout="@layout/fragment_dog_breeds" />
 </navigation>

@@ -2,7 +2,7 @@ package com.panzhiev.dogsbreeds.di.module
 
 import com.google.gson.Gson
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.panzhiev.data.apiservice.DogsBreedsApiService
+import com.panzhiev.data.apiservice.DogBreedsApiService
 import com.panzhiev.dogsbreeds.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -52,6 +52,6 @@ class NetworkModule {
         .build()
 
     @Provides
-    fun provideDogsBreedsApiService(retrofit: Retrofit): DogsBreedsApiService =
-        retrofit.create(DogsBreedsApiService::class.java)
+    fun provideDogsBreedsApiService(retrofit: Retrofit): DogBreedsApiService =
+        retrofit.create(DogBreedsApiService::class.java)
 }
