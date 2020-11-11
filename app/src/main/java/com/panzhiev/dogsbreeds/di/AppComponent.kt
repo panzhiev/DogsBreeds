@@ -2,6 +2,7 @@ package com.panzhiev.dogsbreeds.di
 
 import android.app.Application
 import com.panzhiev.dogsbreeds.DogsBreedsApplication
+import com.panzhiev.dogsbreeds.di.module.AppModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -13,9 +14,9 @@ import kotlin.time.ExperimentalTime
 @Singleton
 @Component(
     modules = [
-        AndroidInjectionModule::class
+        AndroidInjectionModule::class,
+        AppModule::class,
 //        ActivitiesModule::class,
-//        AppModule::class,
 //        RetrofitModule::class,
 //        DbModule::class,
 //        RepositoriesModule::class,
