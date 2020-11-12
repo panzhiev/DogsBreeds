@@ -24,7 +24,7 @@ class DogBreedsRepositoryImpl @Inject constructor(
     override suspend fun getBreedImages(breedPath: String): Result<List<String>> =
         resultHandler {
             val deferreds = arrayListOf<Deferred<BaseResponse<String>>>()
-            for (i in 0 until 10) {
+            repeat(10) {
                 deferreds.add(apiService.getBreedImageAsync(breedPath))
             }
             deferreds.map { it.await().data }
