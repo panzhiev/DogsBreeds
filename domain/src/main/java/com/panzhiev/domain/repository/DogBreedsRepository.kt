@@ -6,4 +6,6 @@ import com.panzhiev.domain.model.Result
 interface DogBreedsRepository {
 
     suspend fun getAllDogsBreeds(): Result<List<DogBreed>>
+
+    suspend fun getBreedImages(breedPath: String): Result<List<String>>
 }

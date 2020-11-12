@@ -9,5 +9,14 @@
         android:id="@+id/dogsBreedsFragment"
         android:name="com.panzhiev.ui.allbreeds.ui.DogBreedsFragment"
         android:label="DogsBreedsFragment"
-        tools:layout="@layout/fragment_dog_breeds" />
+        tools:layout="@layout/fragment_dog_breeds">
+        <action
+            android:id="@+id/action_dogsBreedsFragment_to_breedDetailsFragment"
+            app:destination="@id/breedDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breedDetailsFragment"
+        android:name="com.panzhiev.ui.breeddetails.ui.BreedDetailsFragment"
+        android:label="BreedDetailsFragment"
+        tools:layout="@layout/fragment_breed_details" />
 </navigation>

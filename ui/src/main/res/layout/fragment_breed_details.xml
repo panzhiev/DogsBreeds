@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.panzhiev.ui.allbreeds.viewmodel.DogBreedsViewModel" />
+            type="com.panzhiev.ui.breeddetails.viewmodel.BreedDetailsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,34 +16,37 @@
         android:background="@android:color/white">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/dogBreedsToolbar"
+            android:id="@+id/breedDetailsToolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="@string/app_name"
-            app:titleTextColor="@android:color/white" />
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="@{vm.breedName}"
+            app:titleTextColor="@android:color/white"
+            tools:title="Dog Breed Details" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/dogsBreedsSwipeRefresh"
+            android:id="@+id/breedDetailsSwipeRefresh"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dogBreedsToolbar"
-            app:onRefresh="@{() -> vm.fetchAllBreeds()}"
+            app:layout_constraintTop_toBottomOf="@+id/breedDetailsToolbar"
+            app:onRefresh="@{() -> vm.fetchImages()}"
             app:refreshing="@{vm.isProgress}">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/breedsRv"
-                breeds="@{vm.breeds}"
+                android:id="@+id/breedImagesRv"
+                breedImages="@{vm.breedImages}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_dog_breed" />
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/item_breed_image" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
